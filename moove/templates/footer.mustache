@@ -1,0 +1,209 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_moove/footer
+
+    Page footer.
+
+    Example context (json):
+    {
+        "output": {
+            "page_doc_link": "Help and documentation",
+            "supportemail": "<a href=\"#\">Contact site support</a>",
+            "has_popover_links": true,
+            "services_support": "Services and support",
+            "login_info": "You are logged in as cute kitten",
+            "moodle_release": "90210"
+        }
+    }
+}}
+
+<footer id="page-footer">
+    <div class="moove-container-fluid footer-columns">
+        <div class="row">
+            <div class="col-md-4 column-left">
+                <div class="footerimg"></div>
+                        {{# output.should_display_footerimage }}
+                            <img src="{{output.get_footerimage}}" class="footerimage mr-1" alt="{{sitename}}">
+                        {{/ output.should_display_footerimage }}
+                        {{^ output.should_display_footerimage }}
+                        {{/ output.should_display_footerimage }}
+                </div>
+
+            <div class="col-md-4 column-center">
+                <div class="contact">
+                    <h3 class="footer-title">{{#str}}contactus, theme_moove{{/str}}</h3>
+
+                    <ul>
+                        {{#mail}}
+                            <li>
+                                <a href="mailto:{{{mail}}}">
+                                    <span class="fa fa-envelope"></span> <span class="conteinertext">{{{mail}}}</span>
+                                </a>
+                            </li>
+                        {{/mail}}
+                        {{#mobile}}
+                            <li>
+                                <a href="tel:{{{mobile}}}">
+                                    <span class="fa fa-phone"></span> <span class="conteinertext">{{{mobile}}}</span>
+                                </a>
+                            </li>
+                        {{/mobile}}
+                        {{#address}}
+                            <li>
+                                <a href="https://www.google.com/maps/place/{{{address}}}">
+                                    <span class="fa fa-map-marker"></span> <span class="conteinertext">{{{address}}}</span>
+                                </a>
+                            </li>
+                        {{/address}}
+                        {{#website}}
+                            <li>
+                                <a href="{{{website}}}">
+                                    <span class="fa fa-globe"> </span><span class="conteinertext">{{{website}}}</span>
+                                </a>
+                            </li>
+                        {{/website}}
+                    </ul>
+                </div></div>
+            <div class="col-md-4 column-right">
+                <div class="socialnetworks">
+                    <h3 class="footer-title">{{#str}}followus, theme_moove{{/str}}</h3>
+
+                    <ul class="mb-0">
+                        {{#beteacher}}
+                            <li>
+                                <a href="{{{beteacher}}}">
+                                    <span class="fas fa-chalkboard-teacher"></span> <span class="conteinertext">{{#str}}beteacher, theme_moove{{/str}}</span>
+                                </a>
+                            </li>
+                        {{/beteacher}}
+                        {{#ourteam}}
+                            <li>
+                                <a href="{{{ourteam}}}">
+                                    <span class="fas fa-hands-helping"></span> <span class="conteinertext">{{#str}}ourteam, theme_moove{{/str}}</span>
+                                </a>
+                            </li>
+                        {{/ourteam}}
+                        {{#ourhistory}}
+                            <li>
+                                <a href="{{{ourhistory}}}">
+                                    <span class="fas fa-book"></span> <span class="conteinertext">{{#str}}ourhistory, theme_moove{{/str}}</span>
+                                </a>
+                            </li>
+                        {{/ourhistory}}
+                        {{#pdetran}}
+                            <li>
+                                <a href="{{{pdetran}}}">
+                                    <span class="fas fa-car"></span> <span class="conteinertext">{{#str}}pdetran, theme_moove{{/str}}</span>
+                                </a>
+                            </li>
+                        {{/pdetran}}
+                        {{#facebook}}
+                            <li>
+                                <a href="{{{facebook}}}">
+                                    <span class="fa fa-facebook"></span> <span class="conteinertext">{{{facebook}}}</span>
+                                </a>
+                            </li>
+                        {{/facebook}}
+
+                        {{#twitter}}
+                            <li>
+                                <a href="{{{twitter}}}">
+                                    <span class="fa fa-twitter"></span> <span class="conteinertext">{{{twitter}}}</span>
+                                </a>
+                            </li>
+                        {{/twitter}}
+
+                        {{#linkedin}}
+                            <li>
+                                <a href="{{{linkedin}}}">
+                                    <span class="fa fa-linkedin"></span> <span class="conteinertext">{{{linkedin}}}</span>
+                                </a>
+                            </li>
+                        {{/linkedin}}
+
+                        {{#youtube}}
+                            <li>
+                                <a href="{{{youtube}}}">
+                                    <span class="fa fa-youtube"></span> <span class="conteinertext">{{{youtube}}}</span>
+                                </a>
+                            </li>
+                        {{/youtube}}
+
+                        {{#instagram}}
+                            <li>
+                                <a href="{{{instagram}}}">
+                                    <span class="fa fa-instagram"></span> <span class="conteinertext">{{{instagram}}}</span>
+                                </a>
+                            </li>
+                        {{/instagram}}
+
+                        {{#whatsapp}}
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}">
+                                    <span class="fa fa-whatsapp"></span> <span class="conteinertext">{{{whatsapp}}}</span>
+                                </a>
+                            </li>
+                        {{/whatsapp}}
+
+                        {{#telegram}}
+                            <li>
+                                <a href="{{{telegram}}}">
+                                    <span class="fa fa-telegram"></span> <span class="conteinertext">{{{telegram}}}</span>
+                                </a>
+                            </li>
+                        {{/telegram}}
+                    </ul>
+                </div>
+                {{#enablemobilewebservice}}
+                    {{#mobilesetuplink}}
+                        <a href="{{{mobilesetuplink}}}">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</a>
+                    {{/mobilesetuplink}}
+                    {{^mobilesetuplink}}
+                        <h3 class="footer-title">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</h3>
+                    {{/mobilesetuplink}}
+                    <div class="stores">
+                        {{#androidappid}}
+                            <a href="https://play.google.com/store/apps/details?id={{androidappid}}">
+                                <img src="{{config.wwwroot}}/theme/moove/pix/store_google.svg" alt="Play Store">
+                            </a>
+                        {{/androidappid}}
+                        {{#iosappid}}
+                            <a class="mt-1" href="https://apps.apple.com/app/id{{iosappid}}">
+                                <img src="{{config.wwwroot}}/theme/moove/pix/store_apple.svg" alt="App Store">
+                            </a>
+                        {{/iosappid}}
+                    </div>
+                {{/enablemobilewebservice}}</div>
+            </div>
+        </div>
+
+</footer>
+
+<footer id="page-footer2">
+    <div class="footer-CopyRight">
+        <p1>{{{copyright}}}</p1>
+    </div>
+</footer>
+
+{{{ output.standard_end_of_body_html }}}
+
+{{#js}}
+    require(['theme_boost/footer-popover'], function(FooterPopover) {
+        FooterPopover.init();
+    });
+{{/js}}
